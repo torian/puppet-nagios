@@ -6,7 +6,7 @@ Puppet Nagios Module
 Introduction
 ------------
  
- TODO
+	TODO
 
 Examples
 --------
