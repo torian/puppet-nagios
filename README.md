@@ -1,7 +1,7 @@
 Puppet Nagios Module
 ====================
 
- TODO
+	TODO
 
 Introduction
 ------------
@@ -11,13 +11,21 @@ Introduction
 Examples
 --------
 
-   node nagios.example.com {
-   
-   }
+Configure a node as a nagios server:
+
+	node nagios.example.com {
+		
+		class { 'nagios': }
+		
+	}
+
+FIXME more doc ...
 
 Notes
 -----
 
+	TODO
+	
 Issues
 ------
 
@@ -34,4 +42,3 @@ CopyLeft
 ---------
 
 Copyleft (C) 2013 Emiliano Castagnari <ecastag@gmail.com> (a.k.a. Torian)
-
