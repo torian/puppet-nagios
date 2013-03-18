@@ -1,12 +1,19 @@
 Puppet Nagios Module
 ====================
 
+ TODO
+
 Introduction
 ------------
-
+ 
+ TODO
 
 Examples
 --------
+
+   node nagios.example.com {
+   
+   }
 
 Notes
 -----
