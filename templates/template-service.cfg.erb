@@ -1,0 +1,120 @@
+###############################################################################
+# << FILE MANAGED BY PUPPET >>
+# Manual changes are likey to be overwritten
+###############################################################################
+
+# http://nagios.sourceforge.net/docs/nagioscore/3/en/objectdefinitions.html#service
+
+define service{
+	name                        tmpl_service
+	register                     0
+	active_checks_enabled        1
+	passive_checks_enabled       1
+	parallelize_check            1
+	obsess_over_service          0
+	event_handler_enabled        1
+	flap_detection_enabled       1
+	process_perf_data            1
+	is_volatile                  0
+	retain_status_information    1
+	retain_nonstatus_information 1
+	notifications_enabled        1
+	notification_interval        0
+	notification_period          24x7
+	notification_options         c,r
+	check_period                 24x7
+	check_freshness              1
+	max_check_attempts           1
+	check_interval               1
+}
+
+define service{
+	name                         tmpl_service-2m
+	register                     0
+	check_interval               2
+	retry_interval               1
+	max_check_attempts           1
+	
+}
+
+define service{
+	name                         tmpl_service-5m
+	register                     0
+	check_interval               5
+	retry_interval               2
+	max_check_attempts           2
+	
+}
+
+define service{
+	name                         tmpl_service-10m
+	register                     0
+	check_interval               10
+	retry_interval               2
+	max_check_attempts           3
+	
+}
+
+define service{
+	name                         tmpl_service-30m
+	register                     0
+	check_interval               30
+	retry_interval               2
+	max_check_attempts           4
+	
+}
+
+define service{
+	name                         tmpl_service-1h
+	register                     0
+	check_interval               60
+	retry_interval               5
+	max_check_attempts           3
+	
+}
+
+define service{
+	name                         tmpl_service-2h
+	register                     0
+	check_interval               120
+	retry_interval               10
+	max_check_attempts           3
+	
+}
+
+define service{
+	name                         tmpl_service-5h
+	register                     0
+	check_interval               300
+	retry_interval               10
+	max_check_attempts           3
+	
+}
+
+define service{
+	name                         tmpl_service-24h
+	register                     0
+	check_interval               1440
+	retry_interval               10
+	max_check_attempts           3
+	
+}
+
+define service{
+	name                         tmpl_service-1w
+	register                     0
+	check_interval               7200
+	retry_interval               1440
+	max_check_attempts           2
+	
+}
+
+define service{
+	name                         tmpl_service-1M
+	register                     0
+	check_interval               28800
+	retry_interval               7200
+	max_check_attempts           2
+	
+}
+

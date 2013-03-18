@@ -1,0 +1,26 @@
+###############################################################################
+# << FILE MANAGED BY PUPPET >>
+# Manual changes are likey to be overwritten
+###############################################################################
+
+define contact {
+	name                           tmpl_contact
+	service_notification_period    24x7
+	service_notification_options   u,w,c,r
+	host_notification_options      d,u,r
+	register                       0
+	host_notification_period       24x7
+	service_notification_commands  notify-service-email
+	host_notification_commands     notify-host-email
+}
+
+define contact {
+	name                           tmpl_contact-client
+	service_notification_period    24x7
+	service_notification_options   u,w,c,r
+	host_notification_options      d,u,r
+	register                       0
+	host_notification_period       24x7
+	service_notification_commands  notify-service-email
+	host_notification_commands     notify-host-email
+}
