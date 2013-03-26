@@ -21,7 +21,7 @@ class nagios::params {
 			$http_group     = 'www-data'
 			$prefix         = '/etc/nagios3'
 			$cfg            = "${prefix}/nagios.cfg"
-			$prefix_objects = "${prefix}/conf.d"
+			$prefix_objects = "${prefix}/puppet-conf.d"
 			$htpasswd       = "${prefix}/htpasswd.users"
 			$target_command = "${prefix_objects}/puppet-check-commands.cfg"
 			$target_contact = "${prefix_objects}/puppet-contacts.cfg"
