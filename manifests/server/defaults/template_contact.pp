@@ -8,7 +8,8 @@ class nagios::server::defaults::template_contact {
 		group   => $nagios::params::group,
 		mode    => 0640,
 		content => template('nagios/template-contact.cfg.erb'),
-		notify  => Service[$nagios::params::service]
+		notify  => Service[$nagios::params::service],
+		require => File[$nagios::params::prefix_objects]
 	}
 
 	# FIXME: naginator doesn't use the namevar as name, but as

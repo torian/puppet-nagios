@@ -91,10 +91,11 @@ class nagios(
 	}
 	
 	file { $nagios::params::htpasswd:
-		ensure => present,
-		owner  => $nagios::params::owner,
-		group  => $nagios::params::http_group,
-		mode   => 0640,
+		ensure  => $ensure,
+		owner   => $nagios::params::owner,
+		group   => $nagios::params::http_group,
+		mode    => 0640,
+		require => File[$nagios::params::prefix],
 	}
 
 	# Load exported resources

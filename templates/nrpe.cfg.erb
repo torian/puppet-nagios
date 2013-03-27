@@ -1,0 +1,52 @@
+###############################################################################
+# << FILE MANAGED BY PUPPET >>
+# Manual changes are likey to be overwritten
+###############################################################################
+
+#pid_file=< scope.function_hiera('pid_file') >
+pid_file=<%= scope.lookupvar('nagios::params::nrpe_pidfile') %>
+
+log_facility=daemon
+
+# This option determines whether or not debugging messages are logged to the
+# syslog facility.
+# Values: 0=debugging off, 1=debugging on
+debug=0
+
+#server_port=< scope.function_hiera('server_port') >
+server_port=<%= scope.lookupvar('server_port') %>
+#server_address=
+
+nrpe_user=<%= scope.lookupvar('nagios::params::nrpe_owner') %>
+nrpe_group=<%= scope.lookupvar('nagios::params::nrpe_group') %>
+
+allowed_hosts=<%= scope.lookupvar('allowed_hosts').join(",") %>
+
+# COMMAND ARGUMENT PROCESSING
+# This option determines whether or not the NRPE daemon will allow clients
+# to specify arguments to commands that are executed.  This option only works
+# if the daemon was configured with the --enable-command-args configure script
+# option.  
+#
+# *** ENABLING THIS OPTION IS A SECURITY RISK! *** 
+# Read the SECURITY file for information on some of the security implications
+# of enabling this variable.
+#
+# Values: 0=do not allow arguments, 1=allow command arguments
+
+#dont_blame_nrpe=< scope.function_hiera('dont_blame_nrpe') >
+dont_blame_nrpe=<%= scope.lookupvar('dont_blame_nrpe') %>
+
+# command_prefix=
+
+#command_timeout=< scope.function_hiera('command_timeout') >
+command_timeout=<%= scope.lookupvar('command_timeout') %>
+#connection_timeout=< scope.function_hiera('connection_timeout') >
+connection_timeout=<%= scope.lookupvar('connection_timeout') %>
+
+#include_dir=<somedirectory>
+#include_dir=<someotherdirectory>
+
+# INCLUDE CONFIG FILE
+#include=<somefile.cfg>
+

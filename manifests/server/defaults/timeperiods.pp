@@ -8,7 +8,8 @@ class nagios::server::defaults::timeperiods {
 		group   => $nagios::params::group,
 		mode    => 0640,
 		content => template('nagios/timeperiods.cfg.erb'),
-		notify  => Service[$nagios::params::service]
+		notify  => Service[$nagios::params::service],
+		require => File[$nagios::params::prefix_objects]
 	}
 
 }

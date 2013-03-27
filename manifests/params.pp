@@ -26,6 +26,14 @@ class nagios::params {
 			$target_command = "${prefix_objects}/puppet-check-commands.cfg"
 			$target_contact = "${prefix_objects}/puppet-contacts.cfg"
 			$target_contactgroup = "${prefix_objects}/puppet-contactgroups.cfg"
+
+			$package_nrpe = [ 'nagios-nrpe-server', 'nagios-plugins' ]
+			$nrpe_prefix  = '/etc/nagios'
+			$nrpe_cfg     = "${nrpe_prefix}/nrpe.cfg"
+			$nrpe_owner   = 'nagios'
+			$nrpe_group   = 'nagios'
+			$nrpe_service = 'nagios-nrpe-server'
+			$nrpe_pidfile = '/var/run/nrpe.pid'
 		}
 		
 		redhat: {
@@ -43,6 +51,14 @@ class nagios::params {
 			$target_command = "${prefix_objects}/puppet-check-commands.cfg"
 			$target_contact = "${prefix_objects}/puppet-contacts.cfg"
 			$target_contactgroup = "${prefix_objects}/puppet-contactgroups.cfg"
+
+			$package_nrpe = [ 'nrpe' ]
+			$nrpe_prefix  = '/etc/nagios'
+			$nrpe_cfg     = "${nrpe_prefix}/nrpe.cfg"
+			$nrpe_owner   = 'nagios'
+			$nrpe_group   = 'nagios'
+			$nrpe_service = 'nrpe'
+			$nrpe_pidfile = '/var/run/nrpe.pid'
 		}
 		
 		oel: {

@@ -2,6 +2,10 @@
 class nagios::server::defaults::commands_notify {
 
 	include nagios::params
+	
+	Nagios_command {
+		require => File[$nagios::params::prefix_objects]
+	}
 
 	nagios_command { 'notify-host-email':
 		target       => "${nagios::params::prefix_objects}/commands-notify.cfg",

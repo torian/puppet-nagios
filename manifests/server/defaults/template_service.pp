@@ -8,7 +8,8 @@ class nagios::server::defaults::template_service {
 		group   => $nagios::params::group,
 		mode    => 0640,
 		content => template('nagios/template-service.cfg.erb'),
-		notify  => Service[$nagios::params::service]
+		notify  => Service[$nagios::params::service],
+		require => File[$nagios::params::prefix_objects]
 	}
 
 }

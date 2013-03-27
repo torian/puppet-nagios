@@ -8,7 +8,8 @@ class nagios::server::defaults::template_host {
 		group   => $nagios::params::group,
 		mode    => 0640,
 		content => template('nagios/template-host.cfg.erb'),
-		notify  => Service[$nagios::params::service]
+		notify  => Service[$nagios::params::service],
+		require => File[$nagios::params::prefix_objects]
 	}
 
 	#nagios_host { 'tmpl_host':

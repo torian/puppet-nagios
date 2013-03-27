@@ -3,6 +3,10 @@ class nagios::server::defaults::commands {
 
 	include nagios::params
 
+	Nagios::Command {
+		require => File[$nagios::params::prefix_objects]
+	}
+
 	nagios::command { 'check_nrpe':
 		command_line => 'check_nrpe',
 		command_args => "-H \$HOSTADDRESS$ -p ${nagios::params::nrpe_port}"
